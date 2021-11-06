@@ -1,7 +1,12 @@
-import React from "react";
+import { useRouter } from "next/router";
 import { ChevronRightIcon, StarIcon } from "@heroicons/react/solid";
 
 const Hero = (props) => {
+  const router = useRouter();
+  const searchUser = (event) => {
+    event.preventDefault();
+    router.push(props.search + event.target.address.value);
+  };
   return (
     <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
@@ -31,15 +36,17 @@ const Hero = (props) => {
                   Terra ecosystem.
                 </p>
               </div>
-              <form action="#" className="mt-12 sm:max-w-lg sm:w-full sm:flex">
+              <form
+                onSubmit={searchUser}
+                className="mt-12 sm:max-w-lg sm:w-full sm:flex"
+              >
                 <div className="min-w-0 flex-1">
-                  <label htmlFor="hero-email" className="sr-only">
-                    Terra address
-                  </label>
+                  <label className="sr-only">Terra address</label>
                   <input
                     type="string"
                     className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Enter your Terra address"
+                    name="address"
                   />
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-3">

@@ -8,7 +8,11 @@ import FeatureTextLeft from "../components/FeatureTextLeft";
 export default function Home() {
   return (
     <>
-      <Hero logo={"./terra.png"} title={"Check your LUNAtic score now"} />
+      <Hero
+        logo={"./terra.png"}
+        title={"Check your LUNAtic score now"}
+        search={"/address/"}
+      />
       <FeatureTextLeft
         header={"Crazy scores"}
         description={
