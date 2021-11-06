@@ -107,11 +107,12 @@ export async function getStaticProps({ params }) {
   };
 }
 export async function getStaticPaths() {
-  // Render a major list of addresses first (LUNA stakers), then render any other ones if needed
+  // Render a major list of 1000 addresses first (from LUNA stakers)
+  // Then render any other ones requested at runtime
   const lunaStakers = await fetch(
     `https://api.flipsidecrypto.com/api/v2/queries/663f6b3b-d6c8-4957-ba9c-ed5a74ab717d/data/latest`
   ).then((r) => r.json());
-  const paths = lunaStakers.map((entry) => ({
+  const paths = lunaStakers.slice(0, 1000).map((entry) => ({
     params: { address: entry.ADDRESS },
   }));
 
