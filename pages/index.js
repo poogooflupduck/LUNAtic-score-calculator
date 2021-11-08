@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        logo={"./terra.png"}
+        logo={"/terra.png"}
         title={"Check your LUNAtic score now"}
         search={"/address/"}
       />

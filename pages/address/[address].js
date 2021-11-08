@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export default function Address(props) {
   return (
     <div>
-      <Navbar />
+      <Navbar logo={"/terra.png"} />
       <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
         <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-24">
           <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
@@ -14,8 +15,7 @@ export default function Address(props) {
                     {props.address}
                   </h1>
                   <p className="mt-6 text-lg text-gray-500">
-                    Find out how crazy you are based on your participation in
-                    the Terra ecosystem.
+                    Your LUNAtic score is based on the components below:
                   </p>
                 </div>
               </div>
@@ -32,6 +32,171 @@ export default function Address(props) {
                     </span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-gray-800">
+        <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <div className="w-full h-full flex items-center justify-center">
+            {" "}
+            <p className="mt-3 text-4xl text-gray-300">
+              {props.lunaStakedAmount}
+            </p>
+          </div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="md:ml-auto md:w-1/2 md:pl-10">
+            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              Amount staked
+            </h2>
+            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+              LUNA staking score
+            </p>
+
+            <div className="mt-8">
+              <div className="inline-flex rounded-md shadow">
+                <Link href="https://station.terra.money/staking">
+                  <a
+                    target="_blank"
+                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                    Stake LUNA
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-gray-800 border-t border-black">
+        <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <div className="w-full h-full flex items-center justify-center">
+            {" "}
+            <p className="mt-3 text-4xl text-gray-300">
+              {props.anchorUstDepositCounts}
+            </p>
+          </div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="md:ml-auto md:w-1/2 md:pl-10">
+            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              No. of deposits
+            </h2>
+            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Anchor UST deposit score
+            </p>
+
+            <div className="mt-8">
+              <div className="inline-flex rounded-md shadow">
+                <Link href="https://app.anchorprotocol.com/earn">
+                  <a
+                    target="_blank"
+                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                    Deposit UST on Anchor
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-gray-800 border-t border-black">
+        <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <div className="w-full h-full flex items-center justify-center">
+            {" "}
+            <p className="mt-3 text-4xl text-gray-300">
+              {props.anchorAncStakingCounts}
+            </p>
+          </div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="md:ml-auto md:w-1/2 md:pl-10">
+            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              No. of deposits
+            </h2>
+            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Anchor ANC staking score
+            </p>
+
+            <div className="mt-8">
+              <div className="inline-flex rounded-md shadow">
+                <Link href="https://app.anchorprotocol.com/gov">
+                  <a
+                    target="_blank"
+                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                    Stake ANC on Anchor
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-gray-800 border-t border-black">
+        <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <div className="w-full h-full flex items-center justify-center">
+            {" "}
+            <p className="mt-3 text-4xl text-gray-300">
+              {props.terraVotesCounts}
+            </p>
+          </div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="md:ml-auto md:w-1/2 md:pl-10">
+            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              No. of votes
+            </h2>
+            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Terra governance voting score
+            </p>
+
+            <div className="mt-8">
+              <div className="inline-flex rounded-md shadow">
+                <Link href="https://station.terra.money/governance">
+                  <a
+                    target="_blank"
+                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                    Stake ANC on Anchor
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative bg-gray-800 border-t border-black">
+        <div className="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <div className="w-full h-full flex items-center justify-center">
+            {" "}
+            <p className="mt-3 text-4xl text-gray-300">
+              {props.pylonPoolDepositCounts}
+            </p>
+          </div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="md:ml-auto md:w-1/2 md:pl-10">
+            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              No. of deposits
+            </h2>
+            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Pylon pool deposits score
+            </p>
+
+            <div className="mt-8">
+              <div className="inline-flex rounded-md shadow">
+                <Link href="https://gateway.pylon.money/">
+                  <a
+                    target="_blank"
+                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                    Deposit into a Pylon pool
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
