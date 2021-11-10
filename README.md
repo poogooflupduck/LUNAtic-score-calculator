@@ -4,6 +4,11 @@ Discover your LUNAtic score, based on your participation in the Terra ecosystem.
 
 ### Live Demo: https://lunatic-score-calculator.vercel.app/
 
+
+
+https://user-images.githubusercontent.com/30199031/141052639-61faea67-e551-4d42-8214-2714367a63d4.mp4
+
+
 ## Implementation
 
 This web app uses:
