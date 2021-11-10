@@ -15,22 +15,20 @@ export default function Address(props) {
                     {props.address}
                   </h1>
                   <p className="mt-6 text-lg text-gray-500">
-                    Your LUNAtic score is based on the components below:
+                    Your LUNAtic score is based on the components below.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
+          <div className="sm:mx-auto sm:max-w-3xl">
             <div className="py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
               <div className="relative">
-                <div>
-                  <div className="mx-auto text-center">
-                    <span className="rounded bg-indigo-50 px-4 py-2 text-3xl font-semibold text-indigo-600 tracking-wide uppercase">
-                      {props.score}
-                    </span>
-                  </div>
+                <div className="lg:mt-24 mx-auto text-center">
+                  <span className="rounded bg-indigo-50 px-4 py-2 text-3xl font-semibold text-indigo-600 tracking-wide uppercase">
+                    {props.score}
+                  </span>
                 </div>
               </div>
             </div>

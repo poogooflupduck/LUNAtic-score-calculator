@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { ChevronRightIcon, StarIcon } from "@heroicons/react/solid";
-
+import { useState } from "react";
 const Hero = (props) => {
+  let [loading, setLoading] = useState(false);
   const router = useRouter();
   const searchUser = (event) => {
     event.preventDefault();
-    router.push(props.search + event.target.address.value);
+    router.push("/address/" + event.target.address.value);
   };
   return (
     <div className="bg-white pb-8 sm:pb-12 lg:pb-12">
@@ -37,7 +38,10 @@ const Hero = (props) => {
                 </p>
               </div>
               <form
-                onSubmit={searchUser}
+                onSubmit={(e) => {
+                  searchUser(e);
+                  setLoading(true);
+                }}
                 className="mt-12 sm:max-w-lg sm:w-full sm:flex"
               >
                 <div className="min-w-0 flex-1">
@@ -55,45 +59,16 @@ const Hero = (props) => {
                     type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-indigo-600 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10"
                   >
-                    Go
+                    {loading && (
+                      <svg
+                        className="z-2 animate-spin h-5 w-5 mr-3 text-white"
+                        viewBox="0 0 24 24"
+                      ></svg>
+                    )}
+                    {!loading && <span>Go</span>}
                   </button>
                 </div>
               </form>
-              <div className="mt-6">
-                <div className="inline-flex items-center divide-x divide-gray-300">
-                  <div className="flex-shrink-0 flex pr-5">
-                    <StarIcon
-                      className="h-5 w-5 text-yellow-400"
-                      aria-hidden="true"
-                    />
-                    <StarIcon
-                      className="h-5 w-5 text-yellow-400"
-                      aria-hidden="true"
-                    />
-                    <StarIcon
-                      className="h-5 w-5 text-yellow-400"
-                      aria-hidden="true"
-                    />
-                    <StarIcon
-                      className="h-5 w-5 text-yellow-400"
-                      aria-hidden="true"
-                    />
-                    <StarIcon
-                      className="h-5 w-5 text-yellow-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1 pl-5 py-1 text-sm text-gray-500 sm:py-3">
-                    <span className="font-medium text-gray-900">
-                      Find your score
-                    </span>{" "}
-                    alongide{" "}
-                    <span className="font-medium text-gray-900">
-                      other Terra users
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -102,26 +77,13 @@ const Hero = (props) => {
           <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             <div className="hidden sm:block">
               <div className="absolute inset-y-0 left-1/2 w-screen bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full" />
-              <svg
-                className="absolute top-8 right-1/2 -mr-3 lg:m-0 lg:left-0"
-                width={404}
-                height={392}
-                fill="none"
-                viewBox="0 0 404 392"
-              >
-                <rect
-                  width={404}
-                  height={392}
-                  fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"
-                />
-              </svg>
             </div>
-            <div className="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
-              {/* <img
-                className="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
-                src="https://tailwindui.com/img/component-images/top-nav-with-multi-column-layout-screenshot.jpg"
+            <div className="relative pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
+              <img
+                className="mx-auto w-1/3 lg:w-2/3 rounded-md  lg:h-full "
+                src="./terra.svg"
                 alt=""
-              /> */}
+              />
             </div>
           </div>
         </div>
