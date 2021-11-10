@@ -16,7 +16,7 @@ This web app uses:
 LUNAtic score is calculated by looking at the user's participation in staking, voting and depositing activities.
 The score is the sum of the following components. A SQL query was produced for each component and exposed as an API endpoint via Flipside Crypto.
 
-| Component | API endpoint | Query
+| Component | API endpoint |
 | ------------- | ------------- |
 | Amount of LUNA staked | https://api.flipsidecrypto.com/api/v2/queries/663f6b3b-d6c8-4957-ba9c-ed5a74ab717d/data/latest  |
 | Number of Anchor UST deposits | https://api.flipsidecrypto.com/api/v2/queries/93247971-5bcd-43c4-9542-095f8a12db1e/data/latest |
