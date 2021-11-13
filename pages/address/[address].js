@@ -159,7 +159,7 @@ export default function Address(props) {
                     target="_blank"
                     className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
                   >
-                    Stake ANC on Anchor
+                    Vote on Terra Station
                   </a>
                 </Link>
               </div>
